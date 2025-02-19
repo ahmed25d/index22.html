@@ -1,270 +1,34 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Double Sidebar Page</title>
-    <style>
-        @font-face {
-            font-family: 'FedraDisplayArabic';
-            src: url('FedraDisplayArabic.woff2') format('woff2'),
-                 url('FedraDisplayArabic.woff') format('woff');
-            font-weight: normal;
-            font-style: normal;
-        }
-
-        body {
-            margin: 0;
-            font-family: FedraDisplayArabic, sans-serif;
-            text-align: center;
-            background-color: #d70e1d;
-        }
-
-        .language-toggle {
-            position: fixed;
-            top: 10px;
-            right: 10px;
-            z-index: 1100;
-            background-color: #fff;
-            border: 1px solid #ccc;
-            border-radius: 50%;
-            width: 50px;
-            height: 50px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            cursor: pointer;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        .language-toggle:hover {
-            background-color: #f0f0f0;
-        }
-
-        .language-toggle img {
-            width: 30px;
-            height: 30px;
-        }
-
-        .news-bar {
-            background-color: #555;
-            color: yellow;
-            overflow: hidden;
-            white-space: nowrap;
-            width: 100%;
-            position: fixed;
-            top: 0;
-            left: 0;
-            z-index: 1000;
-            padding: 10px 0;
-        }
-
-        .news-bar-content {
-            display: inline-block;
-            animation: scroll 20s linear infinite;
-        }
-
-        @keyframes scroll {
-            0% {
-                transform: translateX(100%);
-            }
-            100% {
-                transform: translateX(-100%);
-            }
-        }
-
-        .news-bar span {
-            margin: 0 2rem;
-        }
-
-        .content {
-            margin-top: 120px;
-            padding: 20px;
-        }
-
-        .content img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-            margin: 0 auto;
-        }
-
-        .content h1 {
-            font-family: 'FedraDisplayArabic', Arial, sans-serif;
-            font-size: 2.5em;
-            color: #FFFFFF;
-        }
-
-        .image-container {
-            margin-top: 20px;
-            display: flex;
-            justify-content: center;
-        }
-
-        .image-container img {
-            border-radius: 50%;
-            width: 200px;
-            height: 200px;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
-        }
-
-        .sidebar {
-            position: fixed;
-            top: 0;
-            bottom: 0;
-            width: 200px;
-            background-color: #333;
-            color: white;
-            overflow-y: auto;
-            padding: 20px;
-        }
-
-        .left-sidebar {
-            left: 0;
-        }
-
-        .right-sidebar {
-            right: 0;
-        }
-
-        .sidebar h2 {
-            color: yellow;
-        }
-
-        .block {
-            background-color: #fff;
-            color: #333;
-            padding: 10px;
-            margin-bottom: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        .rectangle-blocks {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-            margin: 20px;
-        }
-
-        .rectangle {
-            width: 250px;
-            height: 150px;
-            background-color: #f4f4f4;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-        }
-
-        .external-link {
-            margin-top: 20px;
-        }
-
-        .external-link p {
-            color: #fff;
-            font-size: 1.2em;
-        }
-
-        .external-link a {
-            color: yellow;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1.2em;
-        }
-
-        .video-section {
-            margin: 40px auto;
-            text-align: center;
-        }
-
-        .video-section video {
-            width: 80%;
-            max-width: 800px;
-            border: 5px solid #333;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-        }
-    </style>
+    <title>Teacher Dashboard</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Language Toggle Button -->
-    <div class="language-toggle" onclick="toggleLanguage()">
-        <img src="https://cdn-icons-png.flaticon.com/512/3872/3872596.png" alt="Switch Language">
-    </div>
+    <!-- Existing content of index.html -->
+    <!-- Add new content below -->
 
-    <div class="news-bar">
-        <div class="news-bar-content">
-            <span class="news-1">اخر الاخبار: المدرسة تحقق المركز الاول في الاوليمبياد!</span>
-            <span class="news-2">احدث الفعاليات: انشطة منتوعة و ابداع متجدد!</span>
+    <div class="container mt-5">
+        <div class="icon" onclick="showDashboard()">📊</div>
+        <div id="dashboard" class="mt-5 d-none">
+            <h1>Teacher Dashboard</h1>
+            <button class="btn btn-primary" onclick="createQuiz()">Create Quiz</button>
+            <div id="quizForm" class="mt-4 d-none">
+                <h2>Create a New Quiz</h2>
+                <form id="quizFormContent">
+                    <!-- Quiz form content will be dynamically added here -->
+                </form>
+                <button class="btn btn-success mt-3" onclick="submitQuiz()">Submit Quiz</button>
+            </div>
+            <div id="analytics" class="mt-5 d-none">
+                <h2>Quiz Analytics</h2>
+                <!-- Analytics content will be dynamically added here -->
+            </div>
         </div>
     </div>
-
-    <!-- Sidebars -->
-    <div class="sidebar left-sidebar">
-        <h2>القائمة اليمنى</h2>
-        <div class="block">تفاصيل ١</div>
-        <div class="block">تفاصيل ٢</div>
-        <div class="block">تفاصيل ٣</div>
-        <div class="block">تفاصيل ٤</div>
-        <div class="block">تفاصيل ٥</div>
-    </div>
-
-    <div class="sidebar right-sidebar">
-        <h2>القائمة اليسرى</h2>
-        <div class="block">تفاصيل ٦</div>
-        <div class="block">تفاصيل ٧</div>
-        <div class="block">تفاصيل ٨</div>
-        <div class="block">تفاصيل ٩</div>
-        <div class="block">تفاصيل ١٠</div>
-    </div>
-
-    <!-- Main Content -->
-    <div class="content">
-        <h1 class="heading">اهلا بكم في مدرسة المشكاة</h1>
-        <div class="image-container">
-            <img src="uploaded_image.png" alt="Child Illustration">
-        </div>
-    </div>
-
-    <!-- Video Section -->
-    <div class="video-section">
-        <h2>مشاهدة الفيديو</h2>
-        <video controls>
-            <source src="your-video.mp4" type="video/mp4">
-            متصفحك لا يدعم تشغيل الفيديو.
-        </video>
-    </div>
-
-    <!-- Rectangle Blocks -->
-    <div class="rectangle-blocks">
-        <div class="rectangle">مستطيل ١</div>
-        <div class="rectangle">مستطيل ٢</div>
-    </div>
-
-    <!-- External Link -->
-    <div class="external-link">
-        <p class="external-text">قم بزيارة صفحة تسجيل الدخول الخاصة بنا:</p>
-        <a href="https://ahmed25d.github.io/Login-and-Welcome/" target="_blank" class="external-link-text">اضغط هنا لتسجيل الدخول</a>
-    </div>
-
-    <script>
-        function toggleLanguage() {
-            const html = document.documentElement;
-            const heading = document.querySelector('.heading');
-
-            if (html.lang === 'ar') {
-                html.lang = 'en';
-                document.body.style.fontFamily = 'Arial, sans-serif';
-                heading.textContent = 'Welcome to Al-Mishkat School';
-            } else {
-                html.lang = 'ar';
-                document.body.style.fontFamily = 'FedraDisplayArabic, sans-serif';
-                heading.textContent = 'اهلا بكم في مدرسة المشكاة';
-            }
-        }
-    </script>
+    <script src="scripts.js"></script>
 </body>
 </html>
