@@ -1,9 +1,11 @@
 function showDashboard() {
-    document.getElementById('dashboard').classList.toggle('d-none');
+    const dashboard = document.getElementById('dashboard');
+    dashboard.classList.toggle('d-none');
 }
 
 function createQuiz() {
-    document.getElementById('quizForm').classList.toggle('d-none');
+    const quizForm = document.getElementById('quizForm');
+    quizForm.classList.toggle('d-none');
     const quizFormContent = document.getElementById('quizFormContent');
     quizFormContent.innerHTML = `
         <div class="form-group">
