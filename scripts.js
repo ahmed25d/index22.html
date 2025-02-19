@@ -136,3 +136,10 @@ function submitQuiz() {
     console.log('Quiz submitted:', quiz);
     alert('Quiz submitted successfully!');
 }
+
+document.addEventListener("DOMContentLoaded", function() {
+    const existingDashboard = document.getElementById('dashboard');
+    if (existingDashboard) {
+        showDashboard();
+    }
+});
